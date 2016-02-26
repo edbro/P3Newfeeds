@@ -116,81 +116,89 @@ CREATE TABLE wn16_P3_Articles(
     
 CREATE TABLE wn16_P3_Source(
     SourceID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    subCategoryID INT UNSIGNED,
     Sitename VARCHAR(128) Default '',
     URL VARCHAR(256),
-    PRIMARY KEY (SourceID)
+    PRIMARY KEY (SourceID),
+    FOREIGN KEY (subCategoryID) REFERENCES wn16_P3_subCategories(subCategoryID) ON DELETE CASCADE
     ) ENGINE=INNODB;
-    
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("engadget.com","http://www.engadget.com/rss.xml");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("computerweekly.com","http://www.computerweekly.com/rss/Enterprise-software.xml");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/news/software");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/software-news");
-#INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ()
-    
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("computerweekly.com","http://www.computerweekly.com/rss/IT-hardware.xml");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/computing-components-news");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techrepublic.com","http://techrepublic.com.feedsportal.com");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techrepublic.com","http://techrepublic.com.feedsportal.com/c/35463/f/670887/index.rss");
 
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/reviews/gadgets");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds.webservice.techradar.com/rss/reviews/gadgets");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (1,"engadget.com","http://www.engadget.com/rss.xml");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (1,"computerweekly.com","http://www.computerweekly.com/rss/Enterprise-software.xml");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (1,"techradar.com","http://www.techradar.com/rss/news/software");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (1,"techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (1,"techradar.com","http://feeds2.feedburner.com/techradar/software-news");
 
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techcrunch.com","http://feeds.feedburner.com/TechCrunch/gaming");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/news/gaming");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/gaming-news");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/gaming-reviews");
 
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("nbcnews.com","http://feeds.nbcnews.com/feeds/topstories");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES (".bit-tech.net","http://feeds2.feedburner.com/bit-tech/gaming");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("dailygame.net","http://www.dailygame.net/rss.xml");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("gamegossip.com","http://www.gamegossip.com/syndication/headlines.xml");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("slashdot.org","http://games.slashdot.org/games.rss");
-
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("gamespot.com","http://www.gamespot.com/misc/rss/gam...dates_news.xml");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("gamemarketwatch.com","http://www.gamemarketwatch.com/gmw.xml");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (2,"computerweekly.com","http://www.computerweekly.com/rss/IT-hardware.xml");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (2,"techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (2,"techradar.com","http://feeds2.feedburner.com/techradar/computing-components-news");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (2,"techrepublic.com","http://techrepublic.com.feedsportal.com");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (2,"techrepublic.com","http://techrepublic.com.feedsportal.com/c/35463/f/670887/index.rss");
 
 
 
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/gaming-reviews");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/gaming-news");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("gadgets.ndtv.com","http://gadgets.ndtv.com/rss/games/features");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("gadgets.ndtv.com","http://gadgets.ndtv.com/rss/games/news");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("geek.com","http://www.geek.com/category/games/");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("velocityvctor.com","http://www.velocityvector.com/newvideogames.rss");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (3,"techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (3,"techradar.com","http://www.techradar.com/rss/reviews/gadgets");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (3,"techradar.com","http://feeds.webservice.techradar.com/rss/reviews/gadgets");
+
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"techcrunch.com","http://feeds.feedburner.com/TechCrunch/gaming");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"techradar.com","http://www.techradar.com/rss/news/gaming");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"techradar.com","http://feeds2.feedburner.com/techradar/gaming-news");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"techradar.com","http://feeds2.feedburner.com/techradar/gaming-reviews");
+
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"nbcnews.com","http://feeds.nbcnews.com/feeds/topstories");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,".bit-tech.net","http://feeds2.feedburner.com/bit-tech/gaming");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"dailygame.net","http://www.dailygame.net/rss.xml");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"gamegossip.com","http://www.gamegossip.com/syndication/headlines.xml");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"slashdot.org","http://games.slashdot.org/games.rss");
+
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"gamespot.com","http://www.gamespot.com/misc/rss/gam...dates_news.xml");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (4,"gamemarketwatch.com","http://www.gamemarketwatch.com/gmw.xml");
 
 
 
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/news/world-of-tech");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("nbcnews.com","http://feeds.nbcnews.com/feeds/topstories");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("nintendo.com","https://www.nintendo.com/feed");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (5,"techradar.com","http://feeds2.feedburner.com/techradar/gaming-reviews");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (5,"techradar.com","http://feeds2.feedburner.com/techradar/gaming-news");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (5,"gadgets.ndtv.com","http://gadgets.ndtv.com/rss/games/features");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (5,"gadgets.ndtv.com","http://gadgets.ndtv.com/rss/games/news");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (5,"geek.com","http://www.geek.com/category/games/");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (5,"velocityvctor.com","http://www.velocityvector.com/newvideogames.rss");
 
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("mobilecrunch.com","http://www.infoworld.com/category/mobile-technology/index.rss");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("infoworld.com","http://www.infoworld.com/blog/mobile-edge/index.rss");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("infoworld.com","http://www.computerweekly.com/rss/Mobile-technology.xml");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/news/phone-and-communications");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/phone-and-communications-news");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/phone-reviews");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/reviews/phones");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("digitaltrends.com","feed://www.digitaltrends.com/mobile/feed/");
 
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/news/mobile-computing");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/news/portable-devices");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/mobile-computing-news");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/portable-devices-news");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("pcadvisor.co.uk","http://www.pcadvisor.co.uk/latest/rss");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("notebookcheck.net","http://www.notebookcheck.net/News.152.100.html");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("pcworld.com","http://www.pcworld.com/category/laptop-computers/index.rss");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("laptopmag.com","http://feeds.feedburner.com/laptopmag");
 
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/news/portable-devices");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("techradar.com","http://feeds2.feedburner.com/techradar/portable-devices-news");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("nbcnews.com","http://feeds.nbcnews.com/feeds/topstories");
-INSERT INTo wn16_P3_Source (Sitename, URL) VALUES ("pcworld.com","http://www.pcworld.com/category/tablets/index.rss");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (6,"techradar.com","http://www.techradar.com/rss/news/world-of-tech");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (6,"nbcnews.com","http://feeds.nbcnews.com/feeds/topstories");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (6,"nintendo.com","https://www.nintendo.com/feed");
+
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (7,"mobilecrunch.com","http://www.infoworld.com/category/mobile-technology/index.rss");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (7,"infoworld.com","http://www.infoworld.com/blog/mobile-edge/index.rss");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (7,"infoworld.com","http://www.computerweekly.com/rss/Mobile-technology.xml");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (7,"techradar.com","http://www.techradar.com/rss/news/phone-and-communications");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (7,"techradar.com","http://feeds2.feedburner.com/techradar/phone-and-communications-news");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (7,"techradar.com","http://feeds2.feedburner.com/techradar/phone-reviews");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (7,"techradar.com","http://www.techradar.com/rss/reviews/phones");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (7,"digitaltrends.com","feed://www.digitaltrends.com/mobile/feed/");
+
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (8,"techradar.com","http://www.techradar.com/rss/news/mobile-computing");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (8,"techradar.com","http://www.techradar.com/rss/news/portable-devices");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (8,"techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (8,"techradar.com","http://feeds2.feedburner.com/techradar/mobile-computing-news");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (8,"techradar.com","http://feeds2.feedburner.com/techradar/portable-devices-news");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (8,"pcadvisor.co.uk","http://www.pcadvisor.co.uk/latest/rss");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (8,"notebookcheck.net","http://www.notebookcheck.net/News.152.100.html");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (8,"pcworld.com","http://www.pcworld.com/category/laptop-computers/index.rss");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (8,"laptopmag.com","http://feeds.feedburner.com/laptopmag");
+
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (9,"techradar.com","http://www.techradar.com/rss/news/portable-devices");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (9,"techradar.com","http://www.techradar.com/rss/reviews/pc-mac");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (9,"techradar.com","http://feeds2.feedburner.com/techradar/portable-devices-news");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (9,"nbcnews.com","http://feeds.nbcnews.com/feeds/topstories");
+INSERT INTo wn16_P3_Source (subCategoryID,Sitename, URL) VALUES (9,"pcworld.com","http://www.pcworld.com/category/tablets/index.rss");
+
+
+select * from wn16_P3_Categories join wn16_P3_subCategories on wn16_P3_Categories.CategoryID = wn16_P3_subCategories.CategoryID;
+
 
 
 #SET foreign_key_checks = 1; #turn foreign key check back on

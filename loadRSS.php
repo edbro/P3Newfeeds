@@ -1,6 +1,6 @@
 <?php
  //loadRSS.php
-
+ 
 /* 
 **
 **This file will load all the latest stories from the list of rss feeeds (listed below), 
@@ -8,7 +8,8 @@
 **
 */
 //simple.php is the all-in-one php file for simplepie, a tool that parses rss feeds
-require 'include\simple.php';
+#require '.\php\library\SimplePie.php';
+require 'php/library/SimplePie.php';
 
 include 'inc_0700\credentials_inc.php';
 
